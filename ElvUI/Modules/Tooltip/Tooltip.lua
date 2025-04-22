@@ -198,7 +198,8 @@ function TT:UPDATE_MOUSEOVER_UNIT(_, unit)
 			local diffColor = GetQuestDifficultyColor(level)
 
 			if UnitIsPVP(unit) then
-				pvpFlag = format(" (%s)", HELPFRAME_HOME_ISSUE3_HEADER)
+				local pvpText = HELPFRAME_HOME_ISSUE3_HEADER or "PVP"
+				pvpFlag = format(" (%s)", pvpText)
 			end
 
 			levelLine:SetText(format("|cff%02x%02x%02x%s|r%s %s%s", diffColor.r * 255, diffColor.g * 255, diffColor.b * 255, level > 0 and level or "??", classification[creatureClassification] or "", creatureType or "", pvpFlag))
