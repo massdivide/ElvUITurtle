@@ -288,8 +288,6 @@ function E:FontTemplate(fs, font, fontSize, fontStyle)
 end
 
 function E:StyleButton(button, noHover, noPushed, noChecked)
-
-	if not button then return end
 	if button.SetHighlightTexture and not button.hover and not noHover then
 		local hover = button:CreateTexture()
 		hover:SetTexture(1, 1, 1, 0.3)
